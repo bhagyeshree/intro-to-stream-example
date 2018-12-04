@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -30,6 +31,15 @@ final class AssignmentOneTest {
 
 
 
+    }
+    @Test
+     void evenOrOddReturnEmptyListWhenGivenEmptyList()
+    {
+        //setup
+        List<String> actual = AssignmentOne.evenOrOdd(Collections.emptyList());
+        //Exericise
+        System.out.println(actual);
+        MatcherAssert.assertThat(actual.isEmpty(),is(true));
     }
 
 
