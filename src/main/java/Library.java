@@ -11,13 +11,13 @@ public class Library {
 
      static List<String> reverseString(final List<String> stringToReverse) {
 
-        if(stringToReverse==null || stringToReverse.isEmpty()){
+        if(stringToReverse==null ){
             return Collections.emptyList();
 
         }
-        if(("foo").equals(stringToReverse.get(0))) {
-            return Collections.singletonList("oof");
-        }
+//        if(("foo").equals(stringToReverse.get(0))) {
+//            return Collections.singletonList("oof");
+//        }
          //return Collections.singletonList("bar");
          return stringToReverse
                  .stream()
