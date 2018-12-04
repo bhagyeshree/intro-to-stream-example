@@ -8,11 +8,16 @@ import org.hamcrest.MatcherAssert;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.IntStream;
 
 public class LibraryTest {
+
+
 
     @Test
     void reverseStringsReturnEmptyListWhenGivennull(){
@@ -64,4 +69,90 @@ public class LibraryTest {
 
 
     }
+    //join method test case
+    @Test
+    void joinReturnEmptyStringForNull()
+    {
+        //setup
+        String actual = Library.join(null,null);
+
+        MatcherAssert.assertThat(actual,is(""));
+
+
+
+    }
+
+    @Test
+    void joinReturnOneElementOfString()
+    {
+        //setup
+        String actual = Library.join(" ","abc");
+
+        MatcherAssert.assertThat(actual,is("abc"));
+
+
+
+    }
+    @Test
+    void joinReturnOneStringForAnotherOneElement()
+    {
+        //setup
+        String actual = Library.join(" ","cdef");
+
+        MatcherAssert.assertThat(actual,is("cdef"));
+
+
+
+    }
+    @Test
+    void joinReturnOneStringJoinedForMultipleElement()
+    {
+        //setup
+        String actual = Library.join(" ","cdef","abc","fff");
+
+        MatcherAssert.assertThat(actual,is("cdef abc fff"));
+
+
+
+    }
+    @Test
+    void joinReturnOneStringJoinedForMultipleElementWithNoDelimiter()
+    {
+        //setup
+        String actual = Library.join("","cdef","abc","fff");
+
+        MatcherAssert.assertThat(actual,is("cdef abc fff"));
+
+
+
+    }
+
+    //wordCounts method test case
+    @Test
+    void wordCountsReturnEmptyMapForNull()
+    {
+        //setup
+        Map<String,Integer> actual = Library.wordCounts(null);
+
+        MatcherAssert.assertThat(actual.isEmpty(),is(true));
+
+
+
+    }
+
+    @Test
+    void wordCountsReturnCountOfOneElement()
+    {
+        //setup
+        Map<String,Integer> actual = Library.wordCounts("babali");
+
+        MatcherAssert.assertThat(actual.get("babali"), is(1));
+
+
+
+    }
+
+
+
+
 }
