@@ -1,42 +1,34 @@
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import org.hamcrest.MatcherAssert;
-
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 
 final class AssignmentOneTest {
-
-
     @Test
     void evenOrOddReturnEmptyListForNullInput() {
         //setup
-        //exercise
         List<String> actual = AssignmentOne.evenOrOdd(null);
+        //Assert
         MatcherAssert.assertThat(actual.isEmpty(), is(true));
     }
 
     @Test
     void evenOrOddReturnsOddForOne() {
         //setup
-        //exercise
         final List<String> actual = AssignmentOne.evenOrOdd(Arrays.asList(1));
+        //Assert
         MatcherAssert.assertThat(actual, contains("odd"));
-
-
     }
 
     @Test
     void evenOrOddReturnEmptyListWhenGivenEmptyList() {
         //setup
         List<String> actual = AssignmentOne.evenOrOdd(Collections.emptyList());
-        //Exericise
-        System.out.println(actual);
+        //Assert
         MatcherAssert.assertThat(actual.isEmpty(), is(true));
     }
 
@@ -44,8 +36,8 @@ final class AssignmentOneTest {
     @Test
     void evenOrOddReturnsEvenForFour() {
         //setup
-        //exercise
         final List<String> actual = AssignmentOne.evenOrOdd(Arrays.asList(4));
+        //Assert
         MatcherAssert.assertThat(actual, contains("even"));
 
 
@@ -54,9 +46,19 @@ final class AssignmentOneTest {
     @Test
     void evenOrOddReturnsEvenForZero() {
         //setup
-        //exercise
         final List<String> actual = AssignmentOne.evenOrOdd(Arrays.asList(0));
+        //Assert
         MatcherAssert.assertThat(actual, contains("even"));
+
+    }
+
+    @Test
+    void evenOrOddReturnsTwoWordsForTwoInput() {
+        //setup
+        final List<String> actual = AssignmentOne.evenOrOdd(Arrays.asList(1, 2, null));
+        //Assert
+        MatcherAssert.assertThat(actual, contains("odd", "even"));
+
 
     }
 
