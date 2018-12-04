@@ -17,13 +17,12 @@ public class Library {
         return stringToReverse
                 .stream()
                 .filter(Objects::nonNull)
-                .map(toReverseString())
+                .map(toReverseString)
                 .collect(Collectors.toList());
     }
 
-    private static Function<String, String> toReverseString() {
-        return stringReversed -> new StringBuilder(stringReversed).reverse().toString();
-    }
+    private static Function<String, String> toReverseString= stringReversed -> new StringBuilder(stringReversed).reverse().toString();
+
 
 
 }
