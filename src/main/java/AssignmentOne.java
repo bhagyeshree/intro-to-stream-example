@@ -1,15 +1,29 @@
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 final class AssignmentOne {
-    public static List<String> evenOrOdd(List<Integer> number) {
+    public static List<String> evenOrOdd(List<Integer> numbers) {
 
-        if(number == null || number.isEmpty())
+        if(numbers == null || numbers.isEmpty() )
         {
             return Collections.emptyList();
         }
 
-        return Arrays.asList("odd");
+        return numbers.stream()
+                .map(number -> number % 2 == 0 ? "even" : "odd")
+                .collect(Collectors.toList());
+
+
+
     }
+
+
+
+
+
+
+
+
 }
