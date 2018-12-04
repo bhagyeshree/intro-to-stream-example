@@ -38,4 +38,27 @@ public class LibraryTest {
         MatcherAssert.assertThat(actual,contains("oof"));
 
     }
+    @Test
+    void reverseStringsReturnsOneDifferentReverseValue()
+    {
+        //setup
+        //exercise
+        final List<String> actual = Library.reverseString(Collections.singletonList("rab"));
+        MatcherAssert.assertThat(actual,contains("bar"));
+
+    }
+
+
+    @Test
+    void reverserStringRemovedNullFromList()
+    {
+        //setup
+
+        final List<String> actual = Library.reverseString(Collections.singletonList(null));
+
+        MatcherAssert.assertThat(actual.isEmpty(),is(true));
+
+
+
+    }
 }
