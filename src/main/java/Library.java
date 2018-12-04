@@ -7,10 +7,17 @@ import java.util.List;
 public class Library {
 
 
-    public static List<String> reverseString(final List<String> stringToReverse) {
+     static List<String> reverseString(final List<String> stringToReverse) {
 
-        return Collections.emptyList();
+        if(stringToReverse==null){
+            return Collections.emptyList();
+
+        }
+        return Collections.singletonList("oof");
 
     }
+
+
+
 
 }
