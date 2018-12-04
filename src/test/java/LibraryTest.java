@@ -23,7 +23,7 @@ public class LibraryTest {
     void reverseStringsReturnEmptyListWhenGivenEmptyList()
     {
         //setup
-        List<String> actual = Library.reverseString(null);
+        List<String> actual = Library.reverseString(Collections.emptyList());
         //Exericise
         MatcherAssert.assertThat(actual.isEmpty(),is(true));
     }

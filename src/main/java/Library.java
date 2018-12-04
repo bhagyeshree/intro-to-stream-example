@@ -13,7 +13,12 @@ public class Library {
             return Collections.emptyList();
 
         }
+         if(stringToReverse.isEmpty()){
+             return Collections.emptyList();
+
+         }
         return Collections.singletonList("oof");
+
 
     }
 
