@@ -9,14 +9,11 @@ public class Library {
 
      static List<String> reverseString(final List<String> stringToReverse) {
 
-        if(stringToReverse==null){
+        if(stringToReverse==null || stringToReverse.isEmpty()){
             return Collections.emptyList();
 
         }
-         if(stringToReverse.isEmpty()){
-             return Collections.emptyList();
 
-         }
         return Collections.singletonList("oof");
 
 
